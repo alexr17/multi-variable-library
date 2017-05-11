@@ -1,18 +1,11 @@
 Rails.application.routes.draw do
-  
-  get 'home/new'
 
-  get 'home/create'
+  resources :home
 
-  get 'home/update'
+  get '/about' => 'home#about', as: :about
 
-  get 'home/edit'
+  root to: 'home#show'
 
-  get 'home/destroy'
-
-  get 'home/index'
-
-  get 'home/show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
