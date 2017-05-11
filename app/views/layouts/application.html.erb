@@ -1,14 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html style="height: 100%;">
   <head>
-    <title>MultiVariableLibrary</title>
+    <title>What College Can I Get Into</title>
     <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body style="height: 100%;">
+    <div style='min-height: 100%; position:relative;'>
+      <nav class='navbar navbar-default navbar-static-top' style='border-color: #001943; border-width: 0px 0px 2px 0px; '>
+        <div class='container'>
+          <div class='navbar-header'>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href='/' style='color: #001943; font-weight: 200; -webkit-font-smoothing: antialiased; font-size: 30px;'>What College Can I Get Into?</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav pull-right" >
+              <li>
+                <a href="/" style="color: #001943; font-size: 20px;">Home</a>
+              </li>
+              <li>
+                <%= link_to 'About', about_path, style: 'color: #001943; font-size: 20px;' %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <%= yield %>
+    </div>
   </body>
 </html>
