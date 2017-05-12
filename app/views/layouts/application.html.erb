@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html style="height: 100%;">
   <head>
-    <title>HMVC</title>
+    <title>Title</title>
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">    
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -22,7 +22,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href='/' style='color: #001943; font-weight: 200; -webkit-font-smoothing: antialiased; font-size: 30px;'>The Amazing Library of Multi-Variable Calculus Shit</a>
+            <a class="navbar-brand" href='/' style='color: #001943; font-weight: 200; -webkit-font-smoothing: antialiased; font-size: 30px;'>Title here</a>
           </div>
           <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav pull-right" >
@@ -36,7 +36,25 @@
           </div>
         </div>
       </nav>
-      <%= yield %>
-    </div>
+      <div class='container' style='padding-bottom: 100px; margin-top: -20px;'>
+        <%= yield %>
+      </div>
+      <footer style='height: 100px; position: absolute; bottom: 0; width: 100%;  background-color: #001943; '>
+        <div class='container'>
+          <div class='row'>
+            <div class='text-center' style='color: white; font-size: 20px; font-weight: 400; padding: 38px;'>
+              <div class='col-sm-4'>
+                <span class='pull-right'>Link here</span>
+              </div>
+              <div class='col-sm-4'>
+                <span>Link here</span>
+              </div>
+              <div class='col-sm-4'>
+                <span class='pull-left'>Link here</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
   </body>
 </html>
