@@ -1,0 +1,55 @@
+<%= javascript_include_tag 'least_squares', 'data-turbolinks-track': 'reload' %>
+
+<div class='row' style='margin-bottom: 50px'>
+  <div class='col-sm-4'>
+    <div style='display: inline-block;' >
+      <h1 style='color: #004466; text-transform: capitalize;'>Least Square Regression Lines</h1>
+      <div class='sub-header pull-left' style='font-size: 20px; color: black;'>Enter in your data, choose the delimiter, and select the polynomial degree. An equation will appear along with the graph of your data.</div>
+    </div>
+  </div>
+
+  <div class="col-sm-8">
+    <div style='display: inline-block; padding-top: 20px' >
+      <%= form_tag '#', id: "form" do %>
+        <%= label_tag(:x, "X:") %>
+        <%= text_field(:post, :x, size: 25) %>
+        <%= label_tag(:y, "Y:") %>
+        <%= text_field(:post, :y, size: 25) %>
+        <%= label_tag(:poly_order, "Polynomial Order:") %>
+        <%= select_tag(:poly_order, options_for_select([["1",1],["2",2],["3",3],["4",4]],1)) %>
+        <%= label_tag(:concat, "Concatenator:") %>
+        <%= text_field(:post, :concat, size: 2) %>
+        <%= submit_tag("Submit") %>
+      <% end %>
+    </div>
+    <p id='text' style='font-weight: 200; -webkit-font-smoothing: antialiased; color: #001943; padding-top: 20px;'>Answer here</p>
+    <div id="myDiv" style="width: 480px; height: 400px;"><!-- Plotly chart will be drawn inside this DIV --></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $("form").on("submit", function(){
+    var concat = document.getElementById('post_concat').value
+    
+    var xData = formatData(document.getElementById('post_x').value, concat)
+    var yData = formatData(document.getElementById('post_y').value, concat)
+    if (xData && yData) {
+      var polyOrder = document.getElementById('poly_order').value
+      document.getElementById("text").innerHTML = calculateLeastSquares(xData,yData,parseInt(polyOrder))
+
+      var trace1 = {
+        x: xData,
+        y: yData,
+        mode: 'markers',
+        type: 'scatter'
+      };
+
+      var data = [trace1];
+
+      Plotly.newPlot('myDiv', data);
+    } else {
+      document.getElementById("text").innerHTML = "The data you entered is invalid"
+    }
+    return false;
+  });
+</script>

@@ -6,9 +6,10 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">    
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
-
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body style="height: 100%;">
@@ -36,7 +37,7 @@
           </div>
         </div>
       </nav>
-      <div class='container' style='padding-bottom: 100px; margin-top: -20px;'>
+      <div class='container' style='padding-bottom: 100px; margin-top: -20px; height: 100%'>
         <%= yield %>
       </div>
       <footer style='height: 100px; position: absolute; bottom: 0; width: 100%;  background-color: #001943; '>
