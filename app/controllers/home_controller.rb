@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
 #@@output = 
+skip_before_action  :verify_authenticity_token
   def show 
   end
 
@@ -7,13 +8,18 @@ class HomeController < ApplicationController
   end
 
   def least_squares
-    @x = params[:x]
-    @y = params[:y]
-    @z = params[:z]
+
   end
 
-  def parse_comments
-    
+  def div_curl
   end
+
+  def integral
+  end
+
+  def coordinates
+  end
+  
+
   
 end

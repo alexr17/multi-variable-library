@@ -25,6 +25,11 @@ gem 'bootstrap-sass'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+# for node.js
+gem 'npm-pipeline-rails'
+gem "browserify-rails"
+
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

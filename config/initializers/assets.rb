@@ -10,6 +10,8 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 Rails.application.config.assets.precompile += %w( least_squares.js )
+Rails.application.config.assets.precompile += %w( div_curl.js )
+Rails.application.config.assets.precompile += %w( integral.js )
 
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )

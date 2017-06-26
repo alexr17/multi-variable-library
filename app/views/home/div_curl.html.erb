@@ -1,0 +1,42 @@
+<%= javascript_include_tag 'div_curl', 'data-turbolinks-track': 'reload' %>
+
+<div class='row' style='margin-bottom: 50px'>
+  <div class='col-sm-4'>
+    <div style='display: inline-block;' >
+      <h1 style='color: #004466; text-transform: capitalize;'>Divergence and Curl</h1>
+      <div class='sub-header pull-left' style='font-size: 20px; color: black;'>Conventional coding languages don't have a great way of evaluating things like div and curl so I've decided to use a wolfram widget for now.</div>
+    </div>
+  </div>
+
+  <div class="col-sm-8">
+    <div style="padding-top: 20px" >
+    <!--
+      <%= form_tag '#', id: "form" do %>
+        <%= select_tag(:poly_order, options_for_select([["Div",1],["Curl",2]])) %>
+        <span>&emsp;F&ensp;=&ensp;</span>
+        <%= text_field(:post, :x, size: 20) %>
+        <span><i>i</i>&ensp;+&ensp;</span>
+        <%= text_field(:post, :y, size: 20) %>
+        <span><i>j</i>&ensp;+&ensp;</span>
+        <%= text_field(:post, :z, size: 20) %>
+        <span><i>z</i>&emsp;</span>
+        <%= submit_tag("Submit") %>
+      <% end %>
+      -->
+      <script type="text/javascript" id="WolframAlphaScript85afa8b72bd564fc6c84dde9f0393305" src="//www.wolframalpha.com/widget/widget.jsp?id=85afa8b72bd564fc6c84dde9f0393305"></script>
+    </div>
+    <p id='text' style='font-weight: 200; -webkit-font-smoothing: antialiased; color: #001943; padding-top: 20px;'></p>
+  </div>
+</div>
+
+<script type="text/javascript">
+  //console.log(math.sqrt(4))
+  $("form").on("submit", function(){
+
+    if (/*something is satisfied*/true) {
+    } else {
+      document.getElementById("text").innerHTML = "The data you entered is invalid"
+    }
+    return false;
+  });
+</script>

@@ -1,4 +1,5 @@
 <%= javascript_include_tag 'least_squares', 'data-turbolinks-track': 'reload' %>
+<%= csrf_meta_tags %>
 
 <div class='row' style='margin-bottom: 50px'>
   <div class='col-sm-4'>
@@ -30,7 +31,6 @@
 <script type="text/javascript">
   $("form").on("submit", function(){
     var concat = document.getElementById('post_concat').value
-    
     var xData = formatData(document.getElementById('post_x').value, concat)
     var yData = formatData(document.getElementById('post_y').value, concat)
     if (xData && yData) {

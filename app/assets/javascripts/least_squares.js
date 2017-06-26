@@ -7,6 +7,10 @@ var coeffTable = []
 var coeffArr = []
 var totalArr = []
  
+function test() {
+  console.log('test worked')
+}
+
 function formatData(text, concat) {
   var data = text.split(concat).map(Number)
   if (data.includes(NaN) || data.includes(Infinity) || data.includes (-Infinity))
@@ -82,7 +86,7 @@ function sumSquare(arr1,arr2,power1,power2) {
 
 //populate the coeffTable which will be used to calculate the desired coefficients (a, b, c, etc.)
 function populateCoeff(_callback) {
-  console.log(coeffTable)
+  //console.log(coeffTable)
   for (var ii = polyOrder*2; ii >= 0; ii--) {
     coeffArr.push(sumSquare(xArr,new Array(xArr.length+1).join('0').split('').map(parseFloat),ii,0))
   }
@@ -105,7 +109,7 @@ function printCoeff() {
 //generate the inverse matrix of a matrix
 function matrixInverse(inMatrix) {
   var det = determinant(inMatrix)
-  console.log(det)
+  //console.log(det)
   if (inMatrix.length == 2) {
     return [[inMatrix[1][1]/det,-inMatrix[1][0]/det],[-inMatrix[0][1]/det,inMatrix[0][0]/det]]
   } else {
